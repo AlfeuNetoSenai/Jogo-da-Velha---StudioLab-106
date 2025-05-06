@@ -93,7 +93,7 @@ void jogar() {
         }
 
         player = (player == 'X') ? 'O' : 'X';
-    }
+    }+
 
     printf("\n Fim de jogo! \n");
     system("pause");
@@ -122,7 +122,8 @@ int main() {
                 printf("Saindo do jogo...\n");
                 break;
             default:
-                printf("Opcao inválida! Tente novamente.\n");
+                printf("Opcao invalida! Tente novamente.\n");
+                
                 system("pause");
         }
     } while (opcao != 3);
