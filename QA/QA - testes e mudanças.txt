@@ -1,25 +1,27 @@
-Jogador não escolhe X ou O. Correto.
+Jogador nÃ£o escolhe X ou O. Correto.
 
-Identifica vitórias/empates. Correto.
+Identifica vitÃ³rias/empates. Correto.
 
 Exibe vencedor ou "empate". Correto.
 
 Quando a partida termina, volta ao menu inicial.
 
-O 1º a jogar é o X. Correto.
+O 1Âº a jogar Ã© o X. Correto.
 
-Tabuleiro é exibido com linhas e colunas numeradas. Correto.
+Tabuleiro Ã© exibido com linhas e colunas numeradas. Correto.
 
-Não é possível ocupar uma posição já definida como X ou O. Correto.
+NÃ£o Ã© possÃ­vel ocupar uma posiÃ§Ã£o jÃ¡ definida como X ou O. Correto.
 
-Alterações necessárias:
+AlteraÃ§Ãµes necessÃ¡rias:
 
-Nome da função iTabuleiro deve ser mudado para inicializarTabuleiro().
+Nome da funÃ§Ã£o iTabuleiro deve ser mudado para inicializarTabuleiro().
 
-Nome da função vVitoria deve ser mudado para verificarVitoria().
+Nome da funÃ§Ã£o vVitoria deve ser mudado para verificarVitoria().
 
-Precisa existir uma função chamada jogarTurno().
+Precisa existir uma funÃ§Ã£o chamada jogarTurno().
 
-Precisa existir uma função chamada validarJogada(linha, coluna).
+Precisa existir uma funÃ§Ã£o chamada validarJogada(linha, coluna).
 
-Alterar mensagem de "Opção inválida" para "Casa ocupada, escolha outra posição."
+Alterar mensagem de "OpÃ§Ã£o invÃ¡lida" para "Casa ocupada, escolha outra posiÃ§Ã£o."
+
+Cores diferentes para X e O.
