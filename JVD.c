@@ -13,7 +13,8 @@ void iTabuleiro() {
 
 void Tabuleiro() {
     system("cls"); 
-    printf("\n");
+    printf("\n 1   2   3");
+    printf("\n\n"); // Espaço emcima dos numeros
     for (int i = 0; i < 3; i++) {
         printf(" %c | %c | %c \n", tabuleiro[i][0], tabuleiro[i][1], tabuleiro[i][2]);
         if (i < 2)
@@ -75,20 +76,20 @@ void jogar() {
         }
 
         if (!valido) {
-            printf("Posição inválida! Tente novamente.\n");
+            printf("Posicao invalida! Tente novamente.\n");
             system("pause");
             continue;
         }
 
         if (vVitoria()) {
             Tabuleiro();
-            printf("Parabéns! Jogador %c venceu!\n", player);
+            printf("Parabens! Jogador %c venceu!\n", player);
             break;
         }
 
         if (ve()) {
             Tabuleiro();
-            printf("Empate! Ninguém venceu.\n");
+            printf("Empate! Ninguem venceu.\n");
             break;
         }
 
