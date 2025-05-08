@@ -4,7 +4,7 @@
 char tabuleiro[3][3];
 char player = 'X';
 
-void iTabuleiro() {
+void inicializarTabuleiro() { // Nome da função iTabuleiro deve ser mudado para inicializarTabuleiro().
     char pos = '1';
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
@@ -12,7 +12,7 @@ void iTabuleiro() {
 }
 
 void Tabuleiro() {
-    system("cls"); 
+    system("cls");
     printf("\n 1   2   3");
     printf("\n\n"); // Espaço emcima dos numeros
     for (int i = 0; i < 3; i++) {
@@ -23,7 +23,7 @@ void Tabuleiro() {
     printf("\n");
 }
 
-int vVitoria() {
+int verificarVitoria() { // Alterado 
     for (int i = 0; i < 3; i++) {
         if (tabuleiro[i][0] == tabuleiro[i][1] && tabuleiro[i][1] == tabuleiro[i][2]) return 1;
         if (tabuleiro[0][i] == tabuleiro[1][i] && tabuleiro[1][i] == tabuleiro[2][i]) return 1;
@@ -47,7 +47,7 @@ void instrucoes() {
     printf("1. Dois jogadores alternam jogadas.\n");
     printf("2. O jogador escolhe uma posicao de 1 a 9.\n");
     printf("3. Vence quem formar uma linha, coluna ou diagonal.\n");
-    printf("4. Se todas as posicoes forem preenchidas e ninguém vencer, dá empate.\n\n");
+    printf("4. Se todas as posicoes forem preenchidas e ninguem vencer, da empate.\n\n"); // Alterado Helio
     system("pause");
 }
 
@@ -56,7 +56,7 @@ void jogar() {
     int linha, coluna;
 
     player = 'X';
-    iTabuleiro();
+    inicializarTabuleiro();
 
     while (1) {
         Tabuleiro();
@@ -76,12 +76,12 @@ void jogar() {
         }
 
         if (!valido) {
-            printf("Posicao invalida! Tente novamente.\n");
+            printf( "Posicao invalida ou Casa ocupada, escolha outra posicao.\n");
             system("pause");
             continue;
         }
 
-        if (vVitoria()) {
+        if (verificarVitoria()) {
             Tabuleiro();
             printf("Parabens! Jogador %c venceu!\n", player);
             break;
@@ -92,7 +92,7 @@ void jogar() {
             printf("Empate! Ninguem venceu.\n");
             break;
         }
-
+        
         player = (player == 'X') ? 'O' : 'X';
     }+
 
@@ -124,7 +124,7 @@ int main() {
                 break;
             default:
                 printf("Opcao invalida! Tente novamente.\n");
-                
+
                 system("pause");
         }
     } while (opcao != 3);
