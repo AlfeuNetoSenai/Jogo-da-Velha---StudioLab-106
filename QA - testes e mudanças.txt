@@ -47,3 +47,6 @@ Linha 58 - Um espacito do texto para ficar mais clean
 Linha 74 - Mensagem alterada
 Linha 93 - Condição (acho que é esse o nome mesmo) alterada por conta da linha 35 
 Linha 100 - Removido um "+" que existia após o "}"
+
+Alterado a cor entre X e O // Alfeu
+Adicionado coluna a esquerda do tabuleiro para indicacao (de 1 a 3)
