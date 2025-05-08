@@ -4,24 +4,24 @@ Identifica vitórias/empates. Correto.
 
 Exibe vencedor ou "empate". Correto.
 
-Quando a partida termina, volta ao menu inicial.
+Quando a partida termina, volta ao menu inicial. Correto
 
 O 1º a jogar é o X. Correto.
-
-Tabuleiro é exibido com linhas e colunas numeradas. Correto.
 
 Não é possível ocupar uma posição já definida como X ou O. Correto.
 
 Alterações necessárias:
 
-Nome da função iTabuleiro deve ser mudado para inicializarTabuleiro().
+Nome da função iTabuleiro deve ser mudado para inicializarTabuleiro().// Helio Junior Alterado
 
-Nome da função vVitoria deve ser mudado para verificarVitoria().
+Nome da função vVitoria deve ser mudado para verificarVitoria().// Helio Junior Alterado
+
+Alterar mensagem de "Opção inválida" para "Casa ocupada, escolha outra posição."// Helio Junior Alterado
 
 Precisa existir uma função chamada jogarTurno().
 
 Precisa existir uma função chamada validarJogada(linha, coluna).
 
-Alterar mensagem de "Opção inválida" para "Casa ocupada, escolha outra posição."
+Tabuleiro é exibido com linhas e colunas numeradas. 
 
-Cores diferentes para X e O.
+Cores diferentes para X e O. (Card Final do JIRA )
