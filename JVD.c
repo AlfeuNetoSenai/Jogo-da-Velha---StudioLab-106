@@ -13,12 +13,35 @@ void inicializarTabuleiro() {
 
 void Tabuleiro() {
     system("cls");
-    printf("\n      1   2   3\n\n");
-    for (int i = 0; i < 3; i++) {
-        printf(" %d    %c | %c | %c \n", i + 1, tabuleiro[i][0], tabuleiro[i][1], tabuleiro[i][2]);
+    printf("\n     1   2   3\n\n");
+
+    for (int i = 0; i < 3; i++)
+    {
+        printf(" %d   ", i + 1);
+        for (int j = 0; j < 3; j++)
+        {
+            char c = tabuleiro[i][j];
+            if (c == 'X')
+            {
+                printf("\033[1;31mX\033[0m");
+            }
+            else if (c == 'O')
+            {
+                printf("\033[1;34mO\033[0m");
+            }
+            else
+            {
+                printf("%c", c);
+            }
+
+            if (j < 2)
+                printf(" | ");
+        }
+        printf("\n");
         if (i < 2)
-            printf("     ---|---|---\n");
+            printf("    ---|---|---\n");
     }
+
     printf("\n");
 }
 
