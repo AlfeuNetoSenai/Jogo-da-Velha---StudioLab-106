@@ -4,36 +4,67 @@
 char tabuleiro[3][3];
 char player = 'X';
 
-void inicializarTabuleiro() { // Nome da função iTabuleiro deve ser mudado para inicializarTabuleiro().
+void inicializarTabuleiro()
+{ // Nome da função iTabuleiro deve ser mudado para inicializarTabuleiro().
     char pos = '1';
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
             tabuleiro[i][j] = pos++;
 }
 
-void Tabuleiro() {
+void Tabuleiro()
+{
     system("cls");
-    printf("\n 1   2   3");
-    printf("\n\n"); // Espaço emcima dos numeros
-    for (int i = 0; i < 3; i++) {
-        printf(" %c | %c | %c \n", tabuleiro[i][0], tabuleiro[i][1], tabuleiro[i][2]);
+    printf("\n     1   2   3\n\n");
+
+    for (int i = 0; i < 3; i++)
+    {
+        printf(" %d   ", i + 1);
+        for (int j = 0; j < 3; j++)
+        {
+            char c = tabuleiro[i][j];
+            if (c == 'X')
+            {
+                printf("\033[1;31mX\033[0m");
+            }
+            else if (c == 'O')
+            {
+                printf("\033[1;34mO\033[0m");
+            }
+            else
+            {
+                printf("%c", c);
+            }
+
+            if (j < 2)
+                printf(" | ");
+        }
+        printf("\n");
         if (i < 2)
-            printf("---|---|---\n");
+            printf("    ---|---|---\n");
     }
+
     printf("\n");
 }
 
-int verificarVitoria() { // Alterado 
-    for (int i = 0; i < 3; i++) {
-        if (tabuleiro[i][0] == tabuleiro[i][1] && tabuleiro[i][1] == tabuleiro[i][2]) return 1;
-        if (tabuleiro[0][i] == tabuleiro[1][i] && tabuleiro[1][i] == tabuleiro[2][i]) return 1;
+int verificarVitoria()
+{ // Alterado
+    for (int i = 0; i < 3; i++)
+    {
+        if (tabuleiro[i][0] == tabuleiro[i][1] && tabuleiro[i][1] == tabuleiro[i][2])
+            return 1;
+        if (tabuleiro[0][i] == tabuleiro[1][i] && tabuleiro[1][i] == tabuleiro[2][i])
+            return 1;
     }
-    if (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2]) return 1;
-    if (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0]) return 1;
+    if (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2])
+        return 1;
+    if (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0])
+        return 1;
     return 0;
 }
 
-int ve() {
+int ve()
+{
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
             if (tabuleiro[i][j] != 'X' && tabuleiro[i][j] != 'O')
@@ -41,7 +72,8 @@ int ve() {
     return 1;
 }
 
-void instrucoes() {
+void instrucoes()
+{
     system("cls");
     printf("=== INSTRUCOES DO JOGO ===\n\n");
     printf("1. Dois jogadores alternam jogadas.\n");
@@ -51,59 +83,71 @@ void instrucoes() {
     system("pause");
 }
 
-void jogar() {
+void jogar()
+{
     char escolha;
     int linha, coluna;
 
     player = 'X';
     inicializarTabuleiro();
 
-    while (1) {
+    while (1)
+    {
         Tabuleiro();
         printf("Jogador %c, escolha uma posicao (1-9): ", player);
         scanf(" %c", &escolha);
 
         int valido = 0;
-        for (linha = 0; linha < 3; linha++) {
-            for (coluna = 0; coluna < 3; coluna++) {
-                if (tabuleiro[linha][coluna] == escolha) {
+        for (linha = 0; linha < 3; linha++)
+        {
+            for (coluna = 0; coluna < 3; coluna++)
+            {
+                if (tabuleiro[linha][coluna] == escolha)
+                {
                     tabuleiro[linha][coluna] = player;
                     valido = 1;
                     break;
                 }
             }
-            if (valido) break;
+            if (valido)
+                break;
         }
 
-        if (!valido) {
-            printf( "Posicao invalida ou Casa ocupada, escolha outra posicao.\n");
+        if (!valido)
+        {
+            printf("Posicao invalida ou Casa ocupada, escolha outra posicao.\n");
             system("pause");
             continue;
         }
 
-        if (verificarVitoria()) {
+        if (verificarVitoria())
+        {
             Tabuleiro();
             printf("Parabens! Jogador %c venceu!\n", player);
             break;
         }
 
-        if (ve()) {
+        if (ve())
+        {
             Tabuleiro();
             printf("Empate! Ninguem venceu.\n");
             break;
         }
-        
-        player = (player == 'X') ? 'O' : 'X';
-    }+
 
-    printf("\n Fim de jogo! \n");
+        player = (player == 'X') ? 'O' : 'X';
+    }
+    +
+
+        printf("\n Fim de jogo! \n");
     system("pause");
 }
 
-int main() {
+int main()
+{
     int opcao;
 
-    do {
+    do
+    {
         system("cls");
         printf("=== MENU PRINCIPAL ===\n");
         printf("1. Jogar\n");
@@ -112,20 +156,21 @@ int main() {
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
-        switch (opcao) {
-            case 1:
-                jogar();
-                break;
-            case 2:
-                instrucoes();
-                break;
-            case 3:
-                printf("Saindo do jogo...\n");
-                break;
-            default:
-                printf("Opcao invalida! Tente novamente.\n");
+        switch (opcao)
+        {
+        case 1:
+            jogar();
+            break;
+        case 2:
+            instrucoes();
+            break;
+        case 3:
+            printf("Saindo do jogo...\n");
+            break;
+        default:
+            printf("Opcao invalida! Tente novamente.\n");
 
-                system("pause");
+            system("pause");
         }
     } while (opcao != 3);
 
